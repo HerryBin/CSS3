@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .outset-boxShadow {
+            width: 200px;
+            height: 200px;
+            border: 1px solid aquamarine;
+            box-shadow: 10px 5px 6px 20px red inset;
+            /* x轴偏移量 正数，即X轴正方向，一般为右方，负数，左方向
+               y轴偏移量
+                阴影模糊半径 其值只能是为正值，如果其值为0时，表示阴影不具有模糊效果，其值越大阴影的边缘就越模糊
+                阴影扩展半径
+                阴影颜色
+                投影方式，默认外阴影，inset为内阴影
+            */
+
+        }
+
+        .multi-boxShadow{
+            width: 200px;
+            height: 200px;
+            border: 1px solid royalblue;
+            box-shadow: 10px 5px 6px 20px red inset,-5px 5px 0px 0px #27E143;
+            border-radius:100px;
+        }
+    </style>
+</head>
+<body>
+<p>
+    x轴偏移量，可以当成是在y轴方向阴影的实线宽度
+    内阴影(inset 可以写在参数的第一个或最后一个，其它位置是无效的)
+
+</p>
+<div class="outset-boxShadow">
+
+</div>
+
+<p>
+    添加多个阴影，只需用逗号隔开即可
+</p>
+<div class="multi-boxShadow">
+
+</div>
+</body>
+</html>

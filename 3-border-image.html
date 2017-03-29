@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #border_image{
+            margin:0 auto;
+            height:300px;
+            line-height:300px;
+            text-align:center;
+            font-size:30px;
+            width:450px;
+            border:10px solid red;
+            border-image:url(border-image.jpg) 15 15 15 15 stretch;
+            /*
+               单位为像素，可省略px
+               图片延伸方式为 round
+                            repeat
+                            stretch
+             */
+        }
+    </style>
+</head>
+<body>
+<p>
+    为边框应用背景图片。
+    类似于切片工具，会自动把用作边框的图片切割
+    根据图示切割完border的背景切片后，并且也已经设置了border的宽度。将相应的切片填充到border的相应位置。
+    注意的是：不论border-image引入的图片多大，后面切割的参数都是设置的参数都是根据引入图片大小设置的切割参数。
+    切割后的四周的八个切片，四个角全尺寸缩放显示到border的四个角。
+    除四个角外的其他中间切片（上中，右中间，下中，左中间），可以根据设置做拉伸或重复的设置操作显示到对应的border位置
+</p>
+<div id="border_image">
+    Hello,beautiful border-image
+</div>
+</body>
+</html>

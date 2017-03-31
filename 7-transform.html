@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+
+        p{
+            color:red;
+        }
+
+        ul{
+            list-style-type:none;
+            counter-reset:sectioncounter;
+        }
+        ul li:before {
+            content:counter(sectioncounter) "、";
+            counter-increment:sectioncounter;
+        }
+        .wrapper{
+            width: 200px;
+            height: 200px;
+            border: 1px solid blue;
+            margin: 50px;
+        }
+
+        .wrapper div{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            transform: rotate(45deg);
+        }
+
+        .scale{
+            width: 200px;
+            height: 100px;
+            border: 1px solid blue;
+            margin: 50px;
+        }
+
+        .scale div{
+            width: 200px;
+            height: 100px;
+            background-color: orange;
+            transform: scale(1.5,0.5);
+        }
+
+        .scale div:hover{
+            opacity: .5;
+        }
+
+        .translate{
+            width: 200px;
+            height: 100px;
+            border: 1px solid blue;
+            margin: 50px;
+        }
+
+        .translate div{
+            width: 200px;
+            height: 100px;
+            background-color: orange;
+            transform: translate(100px,20px);
+        }
+
+        .skew{
+            width: 200px;
+            height: 100px;
+            border: 1px solid blue;
+            margin: 50px;
+        }
+
+        .skew div{
+            width: 200px;
+            height: 100px;
+            background-color: orange;
+            transform: skew(50deg,20deg);
+        }
+
+        .transformOrigin{
+            width: 200px;
+            height: 100px;
+            border: 1px dotted red;
+            margin: 50px;
+        }
+
+        .transformOrigin div{
+            width: 200px;
+            height: 100px;
+            transform: rotate(-45deg);
+            background-color: #27E143;
+            transform-origin: bottom right;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>1、旋转 rotate</p>
+        <ul>
+            <li>通过指定角度使元素进行旋转，二维空间进行操作</li>
+            <li>值为正，元素相对原点中心顺时针旋转；值为负，相对逆时针旋转</li>
+        </ul>
+    </div>
+    <div class="wrapper">
+        <div></div>
+    </div>
+
+    <div>
+        <p>2、扭曲 skew</p>
+        <ul>
+            <li>skew 让元素倾斜显示，将其中心围绕着x、y轴按照一定的角度倾斜,可正可负</li>
+            <li>不会旋转，只会改变元素的形状</li>
+        </ul>
+    </div>
+    <div class="skew">
+        <div></div>
+    </div>
+
+    <div>
+        <p>3、缩放 scale</p>
+        <ul>
+            <li>scale(xDeg,yDeg) 使元素x,y轴方向同时缩放,可正可负</li>
+            <li>scaleX(deg px)</li>
+            <li>scaleY(deg px)</li>
+        </ul>
+    </div>
+    <div class="scale">
+        <div></div>
+    </div>
+
+    <div>
+        <p>4、位移 translate</p>
+        <ul>
+            <li>类似于relative，从原有位置移动，而不影响X,Y轴任何web组件</li>
+            <li>translate(xDeg,yDeg) 使元素x,y轴方向同时移动,可正可负</li>
+            <li>translateX(deg)</li>
+            <li>translateY(deg)</li>
+        </ul>
+    </div>
+    <div class="translate">
+        <div></div>
+    </div>
+
+    <div>
+        <p>5、改变图像原点位置 transform-origin</p>
+    </div>
+    <div class="transformOrigin">
+        <div></div>
+    </div>
+</body>
+</html>

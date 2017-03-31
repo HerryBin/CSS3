@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div{
+            padding-bottom:30px;
+        }
+        .columnsDiv{
+            width:300px;
+            columns: 2;
+            /*
+               column-width column-count
+            */
+        }
+        .columnWidth{
+            width:500px;
+            column-width:140px;
+
+            /*
+            当column-width*2==width,分给成两列是没有效果的
+            column-count:3;
+            column-width 和column-count 同用时 column-width 会失效。
+            */
+        }
+
+        .columnsGap{
+            width:300px;
+            column-count:2;
+            column-gap:20px;
+        }
+
+        .columnRule{
+            width:300px;
+            column-count:3;
+            column-rule: 10px solid red;
+            /*
+               column-rule-color:如果不希望显示颜色，可以设置为 transparent
+            */
+        }
+
+        p{
+            color:red;
+            column-span:all;
+            /*
+               none | all
+            */
+        }
+    </style>
+</head>
+<body>
+    <div class="columnsDiv">
+        <p>columns: 多列布局模块</p>
+        它主要应用在文本的多列布局方面.
+        多列布局columns属性参数主要就两个属性参数：列宽和列数。
+        需要注意的是哪怕设置了很多的列数,宽度不够也不会显示出来
+    </div>
+    <div style="width: 150px; border: 1px solid red;">
+        150px
+    </div>
+    <div class="columnWidth">
+        <p>column-width and column-count</p>
+        column-width的使用和CSS中的width属性一样;
+        column-width属性在定义元素列宽的时候，既可以单独使用，也可以和多列属性中其他属性配合使用。
+        column-count属性主要用来给元素指定想要的列数和允许的最大列数
+    </div>
+
+    <div class="columnsGap">
+        <p>column-gap</p>
+        主要用来设置列与列之间的间距.
+        默认值为1em,如果字号是px，其默认值为你的 font-size值
+    </div>
+    <div class="columnRule">
+        <p class="columnSpan">column-span:用于横跨所有的列</p>
+        column-rule 主要用来定义列与列之间边框宽度，样式，边框颜色。
+        但是不会占用任何空间位置，改变其宽度，不会改变列的任何位置
+    </div>
+</body>
+</html>

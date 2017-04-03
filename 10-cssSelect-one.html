@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        p {
+            color: red;
+        }
+
+        ul {
+            list-style-type: none;
+            counter-reset: sectioncounter;
+        }
+
+        ul li:before {
+            content: counter(sectioncounter) "、";
+            counter-increment: sectioncounter;
+        }
+     </style>
+</head>
+<body>
+<div>
+    <p>1、属性选择器</p>
+    <ul>
+        <li>新增三个属性选择器</li>
+        <li>E[attr^=val],匹配元素E，且E中包含了 以属性值val开头的任何字符串：  a[class^=column]{ }</li>
+        <li>E[attr$=val],匹配元素E，且E中包含了 以属性值val结尾的任何字符串：  a[href$=doc] { }</li>
+        <li>E[attr*=val],匹配元素E，且E中定义了属性值val任何字符串，类似模糊查询：  a[href*=doc] { }</li>
+        <li>可以参考 正则匹配表达式符号记忆</li>
+    </ul>
+</div>
+<div>
+    <p>2、结构性伪类选择器 :root</p>
+    HTML文档中，根元素始终是-"<html/>"
+</div>
+
+<div>
+    <p>3、伪类选择器  ：not,可以选择除某个元素之外的所有元素 div:not { }</p>
+</div>
+<div>
+    <p>4、伪类选择器  ：empty,选择没有任何内容的元素 div:empty { }</p>
+</div>
+</body>
+</html>

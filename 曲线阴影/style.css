@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+.warp {
+    width: 700px;
+    height: 300px;
+    margin: 50px auto;
+    background-color: #fff;
+}
+
+.warp h1 {
+    font-size: 20px;
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+}
+
+.effect {
+    position: relative;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.effect:before, .effect:after {
+    position: absolute;
+    content: '';
+    /*指定长 度宽 有两个方法*/
+    top: 50%;
+    bottom: -5px;
+    left: 10px;
+    right: 10px;
+    border-radius: 100px/10px; /*上下100px 半径，左右10px*/
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    z-index: -1;
+
+}
+
+/*翘边阴影 使用两个背景阴影 倾斜、旋转角度 实现翘角阴影*/
+
+.box {
+    width: 990px;
+    height: auto;
+    clear: both;
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+.box li {
+    position: relative;
+    margin:20px 10px;
+    padding: 0;
+    width: 300px;
+    height: 220px;
+    border: 2px solid #efefef;
+
+    float: left;
+    background: #ffffff;
+    line-height:220px;
+    font-size:32px;
+    text-align:center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27),
+    0 0 60px rgba(0, 0, 0, 0.1) inset;
+}
+
+.box li img {
+    display: block;
+    width: 290px;
+    height: 200px;
+    margin: 5px;
+}
+
+.box li:before{
+    position: absolute;
+    content: '';
+    width: 90%;
+    height:80%;
+    left:20px;
+    bottom: 8px;
+
+    transform: skew(-12deg) rotate(-4deg);
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    z-index: -2;
+}
+
+.box li:after{
+    position: absolute;
+    content: '';
+    width: 90%;
+    height:80%;
+    right:20px;
+    bottom: 8px;
+
+    background-color: #fff;
+    transform: skew(12deg) rotate(4deg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    z-index: -2;
+}

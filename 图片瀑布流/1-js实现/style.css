@@ -1,0 +1,27 @@
+
+*{
+    margin:0;
+    padding: 0;
+}
+
+.main{
+    position: relative;
+}
+
+.box{
+    padding: 15px 0 0 15px;;
+    float:left;
+}
+
+.pic{
+    padding: 10px;
+    border:1px solid #c0c0c0;
+    border-radius: 5px ;
+    box-shadow: 0 0 6px #ccc;
+    /* 瀑布流图片等高不等宽*/
+}
+
+.pic img{
+    width:150px;
+    height:auto;
+}

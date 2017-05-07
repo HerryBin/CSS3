@@ -1,0 +1,25 @@
+#main {
+    column-width: 202px;
+    column-count: 6;
+    column-gap: 5px;
+}
+
+.box {
+    padding: 10px 0 0 15px;
+    display:inline-block;
+}
+
+.pic {
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #CCC;
+    width: 165px;
+    display:inline-block;
+}
+
+.pic img {
+    width: 165px;
+    height: auto;
+    display:inline-block;
+}

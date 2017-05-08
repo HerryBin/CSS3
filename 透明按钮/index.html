@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>幽灵按钮</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div style="width: 800px; margin:20px auto;">
+    <ul style="color:white;">
+        <li>1、顶部的线 从左滑到右，高度没变，宽度增加。 终点：top:-2px，是相对按钮位置的top,即在上方</li>
+        <li>2、提示的信息 定位是相对于怎么个大盒子来定位的，自适应的，不能相对于link</li>
+        <li>3、用span来制作三角形</li>
+    </ul>
+</div>
+<div class="box">
+    <div class="link mission-link">
+        <span class="icon animated"></span>
+        <a class="button" data-title="顶部的线 从左滑到右，高度没变，宽度增加">
+            <span class="line line-top"></span>
+            <span class="line line-right"></span>
+            <span class="line line-bottom"></span>
+            <span class="line line-left"></span>
+            Mission
+        </a>
+    </div>
+
+    <div class="link mission-link">
+        <span class="icon animated"></span>
+        <a class="button" data-title="clear">
+            <span class="line line-top"></span>
+            <span class="line line-right"></span>
+            <span class="line line-bottom"></span>
+            <span class="line line-left"></span>
+            Mission
+        </a>
+    </div>
+
+    <p class="tip"><em></em><span></span></p>
+</div>
+</body>
+<script src="../jquery-1.8.3.min.js"></script>
+<script src="index.js"></script>
+</html>

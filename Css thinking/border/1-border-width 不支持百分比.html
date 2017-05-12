@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style type="text/css">
+
+        .main div{
+            float:left;
+            width: 220px;
+            height: 220px;
+            line-height:20px;
+            vertical-align: middle;
+            margin: 0 20px;
+        }
+
+        .example div{
+            display: inline-block;
+        }
+        .dotStyle{
+            border:9px dotted red;
+        }
+
+        .doubleStyle{
+            border:6px double blue;
+            /*双线宽度永远相等，中间间隔+—-1*/
+        }
+
+        .threeLine{
+            width: 120px;
+            height: 20px;
+            border-top:60px double;
+            border-bottom: 20px solid;
+        }
+
+        .add{
+
+            width: 120px;
+            height: 120px;
+            font-size: 58px;
+            line-height: 120px;
+            text-align: center;
+            vertical-align: middle;
+            color:#ccc;
+            border:5px solid;
+        }
+
+        .add:hover{
+            color:#27E143;
+        }
+
+        /*background-position默认相对于左上方定位的*/
+        .poRight{
+            background-position:100% 40px;
+            border-right: 50px solid transparent;
+        }
+    </style>
+</head>
+<body >
+    <p>border-width:不支持百分比，很可能是 边框不会因为设备大小而变化</p>
+    <p>border-style:double,可能 至少是3px,隐藏，medium=3px;  支持关键字：thin 1px，medium 3px ,thick 5px</p>
+
+    <div class="main">
+        <div class="dotStyle">
+           dotted： 在Chrome 方块，IE下为圆点
+            如果将 border的宽度设为 divWith-1,在IE下会有四个圆出现
+        </div>
+
+        <div class="doubleStyle"></div>
+
+        <div style="border:10px solid; color:red;  box-shadow: 10px 10px 5px;">
+            当border-color 为空时，color的颜色便是border-color; 反之，不成立；
+            类似的 有box-shadow,text-shadow
+        </div>
+    </div>
+
+    <hr style="clear: both">
+
+
+    <div class="example">
+        <div style="width: 150px; height: 150px; overflow: hidden;">
+            <div style="width:100%; height:100%; border: 149px dotted red;">
+                IE下是个圆
+            </div>
+        </div>
+        <div class="threeLine">
+
+        </div>
+
+        <div class="add">
+            +
+        </div>
+
+
+    </div>
+    <div style="width: 150px; height: 150px; border:1px solid red;">
+        <span class="poRight">装甲车</span>
+    </div>
+</body>
+
+</html>

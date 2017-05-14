@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>1、margin可以改变容器的可视尺寸</p>
+<p>2、适用没有设定width/height的普通block 水平元素，(float  absolute inline table-cell已经不普通)</p>
+<p>3、即使设定了垂直方向的margin值，但是不会改变元素尺寸，只适用水平方向的尺寸</p>
+
+<div id="div1" style="margin: 10px 200px; background: blue;">
+
+</div>
+<p>margin与占据尺寸</p>
+<p>1、block/inline-block水平元素均适用</p>
+<p>2、与设定width/height值无关，适用于水平与垂直方向</p>
+
+<p>普通元素的百分比margin都是相对于容器的宽度计算的</p>
+<p>绝对定位元素的百分比margin是相对第一个定位祖先元素（relative，absolute、fixed）宽度计算的 ，
+    这里相对于整个浏览器的window.outerWidth的宽度
+</p>
+<div style="height: 450px; width: 800px; border: 1px solid lightseagreen;">
+    <div id="img1" src="core.jpg" style="margin: 10%; border: 1px solid blue; position: absolute;"><div>
+</div>
+
+<div style="height: 45px; width: 80px; border: 1px solid red;">
+    图片的margin都是相对容器的宽度来计算的，这里也就是80px
+</div>
+<script type="text/javascript">
+    let ele1=document.getElementById('div1');
+    console.log(ele1.innerHTML='宽度是：'+ele1.clientWidth);
+
+    let img1=document.getElementById('img1');
+    console.log(document.defaultView.getComputedStyle(img1,null)['margin']);
+</script>
+</body>
+</html>

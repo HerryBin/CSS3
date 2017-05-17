@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .testDiv2>div{
+            width: 200px;
+            height: 100px;
+            border: 1px solid blue;
+            overflow: hidden;
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body>
+<p>
+    1、限制absolute
+    relative 是不脱离文档流的（意思就是它原有的位置是保留的，其他元素无法占据）。
+</p>
+
+<div style="width: 500px; height: 210px; border: 5px solid #df12fd ;margin-top: 100px;">
+    <div class="testDiv2" style="height: 200px; ">
+        <div style="position: relative; top:-50px">使用relative，top:-50px 向上移动，移动空间留下一片空白，DIV2元素不会向上移动</div>
+        <div>DIV2</div>
+    </div>
+</div>
+<p>
+    2、限制z-index 层级
+    如果A与B，父级否有relative限制，则以父级 z-index 为准，子代z-index 大小无效。
+</p>
+
+
+<div style="width: 100px; height: 100px; background-color: #2DCB70; float:left; position: relative;">
+    使用 relative，提高层叠上下文
+</div>
+
+<div style="width: 100px; height: 100px; background-color: #cb2a7c; float:left; margin-left: -50px;">
+</div>
+<div style="clear: both; margin-bottom: 50px;"></div>
+
+<p>父级未使用relative时的显示图</p>
+<div>
+    <div style=" width: 200px; height: 100px; background-color: #df12fd;z-index: 2;">
+
+    </div>
+</div>
+
+<div>
+    <div style=" width: 200px; height: 100px; background-color: #fd7945; margin-top: -50px; z-index: 3; color: white;">
+        未使用 relative,z-index
+    </div>
+</div>
+
+<div style="height: 100px;"></div>
+<div style="position: relative; z-index: 5;">
+    <div style=" width: 200px; height: 100px; background-color: #8bfd4e;z-index: 20;">
+        父级使用 relative,z-index
+    </div>
+</div>
+
+<div style="position: relative; z-index: 3;">
+    <div style=" width: 200px; height: 100px; background-color: #95d6fd; margin-top: -50px; z-index: 30;">
+
+    </div>
+</div>
+
+<p>
+    3、限制overflow
+    overflow定位对普通元素有效，但对绝对定位是没有效果的;
+    当z-index:auto时，不会限制 absolute 元素层叠的问题？？？
+</p>
+
+<p>
+    relative 的最小化影响原则，指的是尽量降低relative属性对齐他元素或布局的潜在影响。
+    relative要遵循避免原则和最小化原则，即能不用relative则不用，relative作用的div范围越小越好;
+</p>
+</body>
+</html>

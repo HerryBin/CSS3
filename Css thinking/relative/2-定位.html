@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .testDiv2>div{
+            width: 200px;
+            height: 100px;
+            border: 1px solid blue;
+            overflow: hidden;
+            margin-left: 100px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div style="width: 100px; height: 100px; background-color: red; position: relative;">
+    relative
+</div>
+<div style="width: 100px; height: 100px; background-color:#63ff52; position: relative;">
+    relative 不设置top,left属性所在的位置
+</div>
+<div style="width: 100px; height: 100px; background-color: #ff22bb; position: relative;left:100px; ">
+    relative 设置  top:100px; left:100px  所在的位置
+</div>
+
+<div style="width: 100px; height: 100px;background-color: #fffe93; position: absolute; top:100px; left:100px; ">
+    absolute 设置 top:100px; left:100px所在的位置
+</div>
+
+<div style="margin-bottom: 100px;">
+    <p>relative 相对于自身定位，不会影响其他元素的布局,无侵入性。</p>
+    <p>可以用来自定义 拖拽</p>
+</div>
+<div style="width: 500px; height: 200px; border: 5px solid #df12fd">
+
+    <div class="testDiv2" style="height: 200px;">
+        <div style="margin-top: -50px;">使用margin-top:-50px，向上移动；兄弟DIV2向上跟着移动，改变了位置</div>
+        <div>DIV2</div>
+    </div>
+
+</div>
+
+<div style="width: 500px; height: 210px; border: 5px solid #df12fd ;margin-top: 100px;">
+    <div class="testDiv2" style="height: 200px; ">
+        <div style="position: relative; top:-50px">使用relative，top:-50px 向上移动，移动空间留下一片空白，DIV2元素不会向上移动</div>
+        <div>DIV2</div>
+    </div>
+</div>
+</body>
+</html>

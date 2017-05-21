@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>margin 重叠</title>
+    <style type="text/css">
+        #brotherDiv>p{
+            line-height: 2em;
+            margin: 1em 0;
+            background-color: #2DCB70;
+        }
+
+        .father{
+            /*overflow: hidden; //父元素非块状格式化上下文元素*/
+
+           /* padding-top: 10px; //父元素没有padding-top值*/
+            /*border:1px solid;*/ /*父元素没有border-top设置*/
+            background-color: #00ff00;
+            color:royalblue;
+        }
+
+        .son{
+
+            margin-top: 50px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<p>1、相邻兄弟元素重叠,外边距合并</p>
+
+<div id="brotherDiv">
+    <p>first p</p>
+    <p>second p</p>
+
+</div>
+<!--在使用 ul li进行布局的时候，可以在 ul li 中不仅仅添加margin-bottom:10px; 也要添加 margin-top:10px；这样可以保证健壮性--->
+<p>叠加规则是 正正最大致  正负值相加   负负最负值</p>
+<p>2、父级和第一个/最后一个子元素</p>
+<div class="father">
+    <!--父元素和第一个元素之间没有inline元素分隔-->
+    <!--margin-bottom也会造成重叠，多一个因素：父元素没有height相关声明-->
+    <div class="son">此时son的背景色高度并没增加,设置的样式=父元素也设置margin-top:50px,或父子同时置成margin-top:50px</div>
+    <div class="son">second son</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无依赖定位</title>
+</head>
+<body>
+
+
+
+<p>无依赖定位:含义：不受relative限制的absolute定位，行为表现上不使用 top/right/bottom/left 任何一个属性或使用auto作为值</p>
+<p>去浮动：absolute 与float是不能同时存在的；同时存在，float失去了效果。</p>
+<img src="1.png"><img style="position: absolute;  float:left;" src="2.png"><img src="1.png">
+<div style="clear: both;"></div>
+<p>
+        如果原来是 display:block，文字会在另一行显示；绝对定位后，文字依然换行显示；
+
+    如果是inline-block,inline 显示，绝对定位后，依然跟随在其后面。
+    在谷歌浏览器中用绝对定位之后再block 不会有任何渲染效果
+</p>
+
+<img src="1.png"><img style="position: absolute;  display: block;" src="2.png">
+</body>
+</html>

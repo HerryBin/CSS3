@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>脱离文档流</title>
+</head>
+<body>
+<p>动画尽量作用在绝对定位元素上</p>
+
+<p>当其中有两个absolute元素时，后来居上。</p><div>
+    误区：绝对定位元素都需要z-index控制层级，确定其显示的垂直位置。
+</div>
+
+<ul>
+    <li>如果只有一个绝对元素，不需要z-index，自然覆盖普通元素</li>
+    <li>两个绝对定位，控制DOM流的前后顺序，无需z-index</li>
+    <li>多个绝对定位交叉，使用z-index:1控制</li>
+</ul>
+
+<div style="width: 200px; height: 200px; background-color: #2DCB70; position: absolute; text-align: right;">first div</div>
+<div style="width: 200px; height: 200px; background-color: #cb1862; z-index:1; vertical-align: bottom; position: absolute">second div</div>
+<div style="width: 200px; height: 200px; background-color: #3c34cb; position: absolute; text-align: right;">first div</div>
+
+</body>
+</html>

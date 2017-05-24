@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .cover {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #8bfd4e;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+1、绝对定位方向是对立时，身体爆裂拉升。
+很多情况下，absolute的翅膀拉升和width/height是可以相互替代的（IE7+)。<br>
+<div style="position: relative; border: 5px solid blue; display: inline-block;">
+    <i class="cover">
+
+    </i>
+    <div style="width: 300px; height: 300px;">
+        使用相同cover样式，不用去更改遮罩宽度，高度
+    </div>
+</div>
+<div style="position: relative; border: 5px solid blue; display: inline-block;">
+    <i class="cover">
+
+    </i>
+    <div style="width: 300px; height: 300px;">
+
+    </div>
+</div>
+
+<p>2、通常元素百分比height:50% 起作用，需要父容器的height值不是auto。但是在absolute 拉伸，即使父容器高度为auto，height百分比也起效果。</p>
+
+<p>3、absolute拉升与width/height 同时存在，则 width/height 优先级> absolute 拉升</p>
+<div style="width: 200px; height: 200px; position: relative; border: 5px solid blue;">
+    <div style="position: absolute; top:0; bottom:0; left:0;  width: 100px; background-color: #fd2dae; ">
+        宽度100px;
+    </div>
+</div>
+
+<div style="width: 200px; height: 200px; position: relative; border: 5px solid #ff261c;">
+    <div style="position: absolute; top:0; bottom:0; left:0; right:0; width: 100px; background-color: #3c53fd; margin:auto;">
+        此时，同时存在，遇到margin 则出现了合作性
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .header{
+            height: 30px;
+            background-color: black;
+            color: white;
+            margin-top: 30px;
+        }
+
+        .hot-icon{
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            margin: -21px 0 0 2px;
+            background-color: #2DCB70;
+            border-radius: 20px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .content{
+            margin-top: 50px;
+            display: inline-block;
+        }
+
+        .content-rec{
+            color: #fff;
+            font-size: 12px;
+            position: absolute;
+            padding: 10px;
+            line-height: 20px;
+            background-color: #ffad09;
+        }
+        .content-stream{
+            width: 300px;
+            height: 300px;
+            background-color: #2DCB70;
+        }
+
+        .content-vip{
+            position: absolute;
+            width: 36px;
+            height: 36px;
+            margin: -300px 0 0 264px;
+            background: url(http://img.mukewang.com/5453048000015d8800360036.gif);
+            text-indent: -9em;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <span>不是用top,left好处:外层元素不用使用relative相对定位，然后使用margin精确定位，实现相对定位效果。<i class="hot-icon">hot</i></span>
+</div>
+
+<p>1、充分利用absolute的 跟随性，因为不占据任何空间，后面的元素便会填充这个空间。</p>
+<div class="content">
+    <span class="content-rec">推荐</span>
+    <div class="content-stream"></div>
+    <i class="content-vip">vip</i>
+</div>
+</body>
+</html>

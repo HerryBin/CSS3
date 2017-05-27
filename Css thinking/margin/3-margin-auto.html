@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>
+    1、div如果不设置宽度，会自动填充整个浏览器宽度。
+
+    原本 应该填充的尺寸被with/height强制变更，margin:auto 便是为了填充这个变更尺寸而设计的;
+    图片，按钮，视频是替换元素
+</p>
+
+<div style="height: 200px; width: 100%;  background-color: #2DCB70; position: relative; ">
+    <div style="position:absolute; top:0; right: 0; bottom: 0; left:0;  height: 100px; width: 500px; margin: auto; background-color: #fa96b5">
+        此时在垂直方向不居中，这是因为，如果 height不设置高度，会自动填充为200px吗(writing-mode: vertical-lr;)？
+    </div>
+</div>
+
+<style type="text/css">
+    .box{
+        width: 1200px;
+        margin:10px auto;
+        background: orange;
+    }
+
+    .ul{
+        overflow: hidden;
+        margin-right: -20px;/*利用margin改变元素的可视宽度*/
+    }
+
+    .li{
+        width: 386.66px;
+        height: 200px;
+        float: left;
+        margin-right: 20px;
+        background: green;
+    }
+</style>
+<div class="box">
+   <div class="ul">
+       <div class="li">1</div>
+       <div class="li">1</div>
+       <div class="li">1</div>
+   </div>
+</div>
+
+<div>
+    <div></div>
+</div>
+</body>
+</html>

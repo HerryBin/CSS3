@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>absolute的包裹性</title>
+
+</head>
+
+<body>
+<h2>absolute</h2>
+<p>
+
+</p>
+<div id="box" style=" padding: 10px; background-color: #50f066; position: absolute;">
+    <p>包裹性：容器absolute化，容器变为inline-block；容器若不设置宽高，则容器的宽高就等于内容的宽高，将内容包括起来。</p>
+    <img src="1.png" width="256px" height="191px">
+</div>
+
+<div style="height: 300px;"></div>
+
+<div style="background-color: #3c53fd;">
+    <p>破坏性：图片设置absolute后，图片就从标准版文档流中脱离了出来，没有东西可以继续支持容器高度，容器高度就变低了。</p>
+    <img src="1.png" style="position: absolute;" width="256px" height="191px">
+    <div style="background-color: #fd5ad2; text-align:right; height: 300px; padding-right: 300px;">
+       <h2>我是图片的兄弟,但是却在成为了它的背景色</h2>
+    </div>
+</div>
+</body>
+</html>

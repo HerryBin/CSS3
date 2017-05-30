@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            -webkit-user-select: none;
+            user-select: none;
+            -ms-touch-action: none;
+        }
+
+        /* construction */
+        html, body, .page {
+            height: 100%; width: 100%;
+            overflow: hidden;
+        }
+        .page {
+            position: absolute; left: 0; top: 0;
+        }
+        #header,#footer{
+            position: absolute;
+            left:0;
+            right:0;
+        }
+
+        #header{
+            height: 48px;
+            top:0;
+            background-color: #2ea7e0;
+        }
+
+        #footer{
+            height: 52px;
+            bottom: 0;
+            background-color: #47c9af;
+        }
+
+        #aside{
+            width: 250px;
+            position: absolute;
+            left:0;
+            top:48px;
+            bottom: 0;
+            background-color: fuchsia;
+        }
+
+        #content{
+            position: absolute;
+            top:48px;
+            bottom: 52px;
+            left: 250px;
+            right: 0;
+            overflow: auto;
+            background-color: #ffe4e8;
+        }
+    </style>
+
+</head>
+<body>
+<div class="page">
+    <div id="header">header</div>
+    <div id="aside">aside</div>
+    <div id="content">absolute依靠取决于父元素还有兄长元素的定位，而float则依靠父元素和浮动元素才能定位</div>
+    <div id="footer">footer</div>
+</div>
+
+</body>
+</html>

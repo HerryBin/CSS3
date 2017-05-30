@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>1、float的设计初衷是用来文字环绕效果</p>
+
+<div style="width: 120px;">
+    <div style="width: 40px; height: 60px; background-color: #2DCB70; display: inline-block; float: left;">
+
+    </div>
+    <p style="color:red; ">float的设计初衷是用来文字环绕效果</p>
+</div>
+
+<style type="text/css">
+    .clearfix{
+        *zoom:1;
+    }
+    .clearfix:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+</style>
+<p>2、包裹性 是指容器包括其内容元素，使 整体元素收缩、坚挺、隔绝(里面的东西发生的任何事情对外面没有任何影响)</p>
+<div style=" float: left; background-color: #f13740;  ">
+    <div style="width: 50px; height: 60px; background-color: #2DCB70; margin: 20px;" >
+
+    </div>
+</div>
+
+
+<p style="clear: both;"></p>
+
+<p>3、破坏性 是指作为被包裹的元素，会使父元素高度坍塌，子元素行被占（若父容器没有设置宽高）。</p>
+
+<div style="background-color: #cf3cf1; ">
+    <div>破坏性</div>
+    <div style="width: 50px; height: 60px; background-color: #3127cb; float: left; ">
+
+    </div>
+
+</div>
+
+<div>
+    clearfix父元素添加 clearfix ， 且只能用在父级子元素上  不可以滥用
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>1、图片也是属于文本，当文本字体是14px时，通过line-height看起来图片稍稍偏下，当字体调到很大时，偏差就会更明显</p>
+<div style="background-color: #2DCB70; font-size:120px; text-align: center; width: 600px; margin: 0 auto;">
+    <span style="display:inline-block; height:100%; width:600px; line-height:300px; ">
+        <img style="vertical-align:middle;" src="1.png">
+    </span>
+</div>
+<p>2、所有内联元素的样式表现都与行内框盒子模型有关</p>
+<p>(1)内容区域：是一种 围绕文字 看不见的盒子，区域高度与font-family,font-size大小有关,与line-height无关。</p>
+<p>(2)内联盒子：不会让内容成块显示，而是排成一行。</p>
+<p>(3)行框盒子：每一行就是一个，每个“行框盒子”又是由一个一个 inline boxes 组成。</p>
+<P>(4)包含盒子：此盒子由一行一行的 行框盒子 组成。</P>
+<div></div>
+<style type="text/css">
+    #sp1{
+        font-size: 36px;
+        line-height: 0;
+        background-color: #00ff00;
+        border:1px solid red;
+    }
+
+    #sp2{
+        font-size: 0px;
+        line-height: 36px;
+        background-color: #2c54ff;
+        border:1px solid #ff18c5;
+    }
+</style>
+<p id="sp1">块元素的高度是由line-height决定的</p>
+<p id="sp2">块元素的高度是由line-height决定的2</p>
+
+<p>行间距=(line-height)  -  (font-size)</p>
+
+<p id="testP1">this is a normal text,there is a <em style="line-height: 80px; vertical-align: 40px;">em</em></p>
+<script type="text/javascript">
+    console.log(document.getElementById('testP1').clientHeight);
+</script>
+</body>
+</html>
